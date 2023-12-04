@@ -27,7 +27,11 @@ const getUsers = async () => {
 const boton = document.getElementById("boton");
 boton.addEventListener("click", () => {
   boton.classList.add("d-none");
-   
+  
+//===================volver a hacer solicitud get========================
+/**
+ * En caso de que pase más de 1 minuto, se debe volver a hacer una
+ */   
    if (verifyTime()) {
       let data = localStorage.getItem("usersTime");
       data = JSON.parse(data)
@@ -127,11 +131,7 @@ const saveLocal = (users) => {
  
  
 
-//===================volver a hacer solicitud get========================
-/**
- * En caso de que pase más de 1 minuto, se debe volver a hacer una
- * solicitud get.Aquí el ejemplo en dibujo de las indicaciones anteriores:
- */
+
 
 //=================
 /**
@@ -143,7 +143,4 @@ const saveLocal = (users) => {
  * Usa estilos con Bootstrap.
  */
 
-// setTimeout(() => {
-//    loading.style.display = "none";
-//, 3000);
-//}
+
